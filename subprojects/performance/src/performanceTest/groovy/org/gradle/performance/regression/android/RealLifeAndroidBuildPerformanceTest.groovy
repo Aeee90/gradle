@@ -16,11 +16,9 @@
 
 package org.gradle.performance.regression.android
 
-import org.gradle.performance.categories.PerformanceExperiment
 import org.gradle.performance.fixture.BuildExperimentInvocationInfo
 import org.gradle.performance.fixture.BuildExperimentListenerAdapter
 import org.gradle.util.GFileUtils
-import org.junit.experimental.categories.Category
 import spock.lang.Unroll
 
 class RealLifeAndroidBuildPerformanceTest extends AbstractAndroidPerformanceTest {
@@ -54,7 +52,7 @@ class RealLifeAndroidBuildPerformanceTest extends AbstractAndroidPerformanceTest
         'santaTrackerAndroidBuild' | '1g' | true  | null | null | 'assembleDebug'
     }
 
-    @Category(PerformanceExperiment)
+//    TODO wolfs: enable @Category(PerformanceExperiment)
     @Unroll
     def "clean #tasks on #testProject with clean transforms cache"() {
         given:
